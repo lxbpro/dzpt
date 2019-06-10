@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_bg"
+        android:orientation="horizontal"
+        android:weightSum="9" >
+
+        <ImageButton
+            android:id="@+id/friendapplication_imagebtn_return"
+            android:layout_width="50sp"
+            android:layout_height="40sp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/page_btn_return" />
+
+        <TextView
+            android:id="@+id/friendapplication_tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:text="@string/friendapplication"
+            android:textColor="@color/lightgold"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <FrameLayout
+                android:id="@+id/listitemnewfriendslist_fra_headportrait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:layout_gravity="center" >
+
+                <ImageView
+                    android:layout_width="40dip"
+                    android:layout_height="40.0dip"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@null"
+                    android:src="@drawable/me_head_bg_circul" />
+
+                <com.gamecenter.gamecenter.util.circleheadportraitutil.CircularImage
+                    android:id="@+id/friendapplication_cover_user_photo"
+                    android:layout_width="30.0dip"
+                    android:layout_height="30.0dip"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginTop="4.0dip" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/friendapplication_tv_friendname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dip"
+                    android:text="@string/noknow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/friendapplication_tv_friendgender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dip"
+                    android:text="@string/man" />
+
+                <TextView
+                    android:id="@+id/friendapplication_tv_friendage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:text="@string/twentitytwo" />
+
+                <TextView
+                    android:id="@+id/friendapplication_tv_friendaddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:text="@string/hebeihengshui" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal">
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dip"
+	        android:text="@string/additionalmessage"/>
+	    <TextView 
+	        android:id="@+id/friendapplication_tv_friendaddtionalmessage"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="20dip"
+	        android:text="@string/requestaddnewfriend"/>
+	    <Button 
+	        android:id="@+id/friendapplication_btn_reply"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="60dip"
+	        android:background="@drawable/login_button_bg"
+	        android:text="@string/reply"/>
+	</LinearLayout>
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    >
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dip"
+	        android:text="@string/resource"/>
+	    <TextView 
+	        android:id="@+id/friendapplication_tv_addfriendresource"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="49dip"
+	        android:text="@string/addbyaccount"/>
+	</LinearLayout>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    >
+	    <TextView 
+	        android:id="@+id/friendapplication_tv_friendstatue"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/applicationstatue"
+	        android:visibility="invisible"/>
+	</LinearLayout>
+	<LinearLayout 
+	    android:id="@+id/friendapplication_lly_isagree"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:weightSum="2"
+	    android:visibility="invisible"
+	    >
+	    <Button 
+	        android:id="@+id/friendapplication_btn_refuse"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_marginLeft="30dp"
+	        android:layout_marginRight="5dp"
+	        android:background="@drawable/login_button_bg"
+	        android:text="@string/refuse"/>
+	    <Button 
+	        android:id="@+id/friendapplication_btn_agree"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_marginRight="30dp"
+	        android:background="@drawable/login_button_bg"
+	        android:text="@string/agree"/>
+	</LinearLayout>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="200dp"
+	    android:gravity="center">
+	    <Button 
+	        android:id="@+id/friendapplication_btn_reportuser"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@null"
+	        android:text="@string/reportuser"/>
+	</LinearLayout>
+</LinearLayout>

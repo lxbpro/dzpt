@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="2" >
+    <LinearLayout 
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left|center_vertical"
+        android:layout_weight="1">
+        <FrameLayout
+            android:id="@+id/groupitemlist_headportrait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_gravity="center" >
+
+            <ImageView
+                android:layout_width="40dip"
+                android:layout_height="40.0dip"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                android:src="@drawable/me_head_bg_circul" />
+
+            <com.gamecenter.gamecenter.util.circleheadportraitutil.CircularImage
+                android:id="@+id/groupitemlist_cover_user_photo"
+                android:layout_marginLeft="5.0dip"
+                android:layout_marginTop="4.0dip"
+                android:layout_width="30.0dip"
+                android:layout_height="30.0dip"
+                android:layout_centerInParent="true" />
+        </FrameLayout>
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:layout_marginLeft="7dip"
+            android:orientation="vertical">
+            <LinearLayout 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               
+                >
+                <TextView 
+                    android:id="@+id/groupitemlist_tv_friendname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/noknow"
+                    android:textColor="@color/red"/>
+            </LinearLayout>
+            <LinearLayout 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView 
+                    android:id="@+id/groupitemlist_tv_friendstatue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/noknow"
+                    android:textColor="@color/yellow"/>
+            </LinearLayout>
+        </LinearLayout>
+       
+    </LinearLayout>
+     <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right|center_vertical"
+            >
+            <ImageView
+                android:id="@+id/groupitemlist_imagebtn_webcam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/webcam"/>
+        </LinearLayout>
+
+</LinearLayout>

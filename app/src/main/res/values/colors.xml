@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="white">#EEAD0E</color>
+    <color name="gold">#b89766</color>
+    <color name="lightgold">#EEC900</color>
+    <color name="black">#ff000000</color>
+    <color name="red">#EE0000</color>
+    <color name="yellow">#CDCD00</color>
+    <color name="blue">#1E90FF</color>
+    <color name="gragmentbg">#aafaf9f9</color>
+    <color name="groupbg">#aaeff5f5</color>
+    <color name="txtboder">#aa747878</color>
+    <color name="tabselect">#008000</color>
+    <color name="tabunselect">#000000</color>
+</resources>

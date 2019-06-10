@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+
+    <ImageView
+        android:id="@+id/msg_notification_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/icon" />
+
+    <TextView
+        android:id="@+id/msg_notification_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/msg_notification_image"
+        android:textSize="20dp"
+        android:text="标题"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/msg_notification_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/msg_notification_image"
+        android:layout_below="@+id/msg_notification_title"
+        android:textSize="15dp"
+        android:text="内容"
+        android:textColor="#000000" />
+
+</RelativeLayout>

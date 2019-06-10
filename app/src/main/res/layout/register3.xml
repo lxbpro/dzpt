@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_bar"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/findpassword2_image_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:layout_weight="1"
+            android:src="@drawable/abc_ic_ab_back_holo_light" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="20"
+            android:gravity="center_horizontal"
+            android:text="@string/register"
+            android:textColor="#EEE9E9"
+            android:textSize="22dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10.0dip"
+         android:layout_marginRight="10.0dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:text="@string/authcode" />
+
+        <EditText
+            android:id="@+id/register3_et_authcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="@string/inputmessageauthcode" >
+        </EditText>
+
+        <Button
+            android:id="@+id/register3_btn_resend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@color/lightgold"
+            android:text="@string/resend"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        >
+        <ImageView 
+	         android:id="@+id/register3_image_statue"
+	         android:layout_width="0dp"
+	         android:layout_height="50dp"
+	         android:src="@drawable/dishu"
+	         android:layout_weight="2"
+	         />
+
+        <TextView
+            android:id="@+id/register3_tv_showstatue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/remainder" />
+        
+         <TextView
+            android:id="@+id/register3_tv_showqqaccount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:visibility="invisible"
+            android:text="@string/remainder" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15.0dip"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/register3_btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/register_btn"
+            android:text="@string/ok"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <EditText
+            android:id="@+id/tab_item_grouplist_et_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_weight="7.35"
+            android:hint="@string/search"
+            android:maxLength="16"
+            android:maxLines="1" />
+
+        <ImageButton
+            android:id="@+id/tab_item_grouplist_btn_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.38"
+            android:background="@null"
+            android:src="@drawable/search" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+        <!-- 加群 -->
+        <!--android:src="@drawable/tab_group_select"-->
+        <ImageButton
+            android:id="@+id/tab_item_grouplist_btn_addgroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher"
+            android:background="@null"
+            android:layout_weight="1"/>
+        <!-- 新建群 -->
+        <ImageButton
+            android:id="@+id/tab_item_grouplist_btn_newgroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/qq_leba_list_seek_myfeeds"
+            android:background="@null"
+            android:layout_weight="1"/>
+        <!-- 新建群分组 -->
+        <ImageButton
+            android:id="@+id/tab_item_grouplist_btn_newgroupclass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/qq_leba_list_seek_individuation"
+            android:background="@null"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <ExpandableListView
+        android:id="@+id/tab_item_grouplist_expandlistview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ExpandableListView>
+    <!--
+    <ImageView 
+        android:id="@+id/tab_item_group_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/tab_group_select"/>
+    -->
+</LinearLayout>

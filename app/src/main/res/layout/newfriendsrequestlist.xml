@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+     <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/login_bg"
+        android:weightSum="10"
+        >
+        <ImageButton 
+            android:id="@+id/newfriendsrequestlist_imagebtn_return"
+            android:layout_width="50sp"
+            android:layout_height="40sp"
+            android:src="@drawable/page_btn_return"
+            android:layout_gravity="left|center_vertical"
+            android:layout_weight="1"
+            android:background="@null"/>
+        <TextView 
+            android:id="@+id/newfriendsrequestlist_tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/lightgold"
+            android:textSize="20sp"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:text="@string/newfriends"/>
+        <Button 
+            android:id="@+id/newfriendsrequestlist_btn_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/lightgold"
+            android:background="@null"
+            android:text="@string/help"/>
+    </LinearLayout>
+	<ListView 
+	    android:id="@+id/newfirendsrequestlist_listview"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	</ListView>
+</LinearLayout>
