@@ -1,6 +1,5 @@
 package com.gamecenter.gamecenter.model;
 
-import com.ab.util.AbStrUtil;
 import com.gamecenter.gamecenter.Defines.Defines;
 import com.gamecenter.gamecenter.util.MD5Util;
 
