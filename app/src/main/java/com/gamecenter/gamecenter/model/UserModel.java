@@ -12,7 +12,7 @@ public class UserModel {
     private String account;
     private String pwd;
     private String email;
-    private String userstatus = "0";// 用户状态    0无；1在线；2离开；3忙碌；4免打扰；5隐身；6离线。
+    private int userstatus = 0;// 用户状态    0无；1在线；2离开；3忙碌；4免打扰；5隐身；6离线。
     private int user_webcam;// 头像？
 
     public int getUser_webcam() {
@@ -23,11 +23,11 @@ public class UserModel {
         this.user_webcam = user_webcam;
     }
 
-    public String getUserstatus() {
+    public int getUserstatus() {
         return userstatus;
     }
 
-    public void setUserstatus(String userstatus) {
+    public void setUserstatus(int userstatus) {
         this.userstatus = userstatus;
     }
 
@@ -84,6 +84,6 @@ public class UserModel {
         id = obj.getInt(Defines.USER_ID);
         account = obj.getString(Defines.USER_ACCOUNT);
         email = obj.getString(Defines.USER_EMAIL);
-        userstatus = obj.getString(Defines.USER_LOGIN_STATUS);
+        userstatus = obj.getInt(Defines.USER_LOGIN_STATUS);
     }
 }

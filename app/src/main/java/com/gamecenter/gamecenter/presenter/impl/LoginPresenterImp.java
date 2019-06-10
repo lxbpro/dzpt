@@ -36,6 +36,7 @@ public class LoginPresenterImp implements ILoginPresenter {
     public void doLogin(String account, String pwd) throws JSONException {
         userModel.setAccount(account);
         userModel.setPwd(pwd);
+        userModel.setUserstatus(1);
         WebSocketManage.getInstance().sendTextMsg(userModel.toLoginJson());
     }
 

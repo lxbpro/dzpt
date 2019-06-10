@@ -94,11 +94,11 @@ public class MainActivity extends BaseActivity implements IMainView,View.OnClick
         super.onRestart();
         //Log.i("TAG", MainActivity.user.getUser_nickName()+"onRestart1");
         tvusername.setText(MainActivity.getCurrentUser().getUsername());
-        String statue = MainActivity.getCurrentUser().getUserstatus();
+        int statue = MainActivity.getCurrentUser().getUserstatus();
         Log.i("TAG", statue+"zhuangtai");
-        if(statue.equals("1")){
+        if(statue == 1){
             imageaccountstatue.setImageResource(R.drawable.account_current);
-        }else if(statue.equals("3")){
+        }else if(statue == 3){
             imageaccountstatue.setImageResource(R.drawable.offline);
         }
     }
