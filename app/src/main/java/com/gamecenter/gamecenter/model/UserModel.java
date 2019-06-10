@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 public class UserModel {
     private int id;
-    private String username;222
+    private String username;
     private String account;
     private String pwd;
     private String email;
