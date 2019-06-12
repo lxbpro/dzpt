@@ -18,7 +18,7 @@
 	<string name="register_tip">温馨提示: \n带*项为必填项\n填写邮箱方便您找回密码以及了解更多QQ信息</string>
 	<string name="register_tip2">温馨提示: \n认真填写信息更有机会遇见有缘人哦</string>
 	<string name="addphonenum">请输入手机号</string>
-	<string name="addfriendaccount">请输入亲情号</string>
+	<string name="addfriendaccount">请输入手机号</string>
 	<string name="phonenum">手机号</string>
 	<string name="authcode">验证码</string>
 	<string name="friendaccount">亲情号</string>

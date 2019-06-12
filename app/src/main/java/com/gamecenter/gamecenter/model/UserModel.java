@@ -80,6 +80,16 @@ public class UserModel {
         return userobj.toString();
     }
 
+    public String toRegistJson() throws JSONException {
+        JSONObject userobj = new JSONObject();
+        userobj.put(Defines.CLIENT_REQUEST_TYPE_STR, Defines.REQUEST_TYPE_REGIST);
+        userobj.put(Defines.USER_ACCOUNT,account);
+        userobj.put(Defines.USER_PASSWORD,MD5Util.toMD5(pwd));
+        userobj.put(Defines.USER_NAME,username);
+        userobj.put(Defines.USER_EMAIL,email);
+        return userobj.toString();
+    }
+
     public void setUserInfo(JSONObject obj) throws JSONException {
         id = obj.getInt(Defines.USER_ID);
         account = obj.getString(Defines.USER_ACCOUNT);

@@ -55,7 +55,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingLeft="15.0dip"
-                android:text="@string/friendaccount"
+                android:text="@string/phonenum"
                 android:textColor="@color/lightgold"
                 android:textSize="18.0sp" />
 
