@@ -97,6 +97,6 @@ public class RegisterActivity extends BaseActivity implements IRegisterView, Vie
     }
     public void  showRollbackTest(String str)throws JSONException {
 
-        Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), str, Toast.LENGTH_LONG).show();
     }
 }
