@@ -114,11 +114,10 @@ public class DealServerMsg {
         Looper.prepare();//增加部
         RegisterActivity loginActivity = (RegisterActivity) BaseActivity.getCurrentActivity();
         loginActivity.showRollbackTest(errotstr);
-        Looper.loop();
         if(boolresult.equals("True")) {
-           loginActivity.backLogin();
+            loginActivity.backLogin();
         }
-
+        Looper.loop();
     }
 
     private static void parsePrivateMsg(JSONObject msgobj) throws JSONException, ParseException {
