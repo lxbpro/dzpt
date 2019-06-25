@@ -19,6 +19,7 @@ import com.gamecenter.gamecenter.activity.ChatActivity;
 import com.gamecenter.gamecenter.activity.FriendFragment2;
 import com.gamecenter.gamecenter.activity.MainActivity;
 import com.gamecenter.gamecenter.activity.R;
+import com.gamecenter.gamecenter.activity.ScenarioAllInfoActivity;
 import com.gamecenter.gamecenter.model.ADataManage;
 import com.gamecenter.gamecenter.model.FriendModel;
 import com.gamecenter.gamecenter.model.ScenarioModel;
@@ -36,7 +37,7 @@ public class PublicScenFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.public_scen_fragment, container, false);
 
-        expandableListView = (ExpandableListView)view.findViewById(R.id.public_scen_expandlistview);
+        expandableListView = view.findViewById(R.id.public_scen_expandlistview);
         //设置子选项点击监听事件
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             //groupPosition代表着要接收的数组的行数（组下标）
@@ -45,6 +46,7 @@ public class PublicScenFragment extends Fragment {
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {                         //childPosition代表着要接收的数组的列数
                 int groupid = ADataManage.getInstance().getPublicScenClass().get(groupPosition).getChildIntegerId(childPosition);
                 ScenarioModel ScenChild = ADataManage.getInstance().getPublicScenMap().get(groupid);
+                JumpinFo(ScenChild.getScenid());//跳转到想定详情
                 Toast.makeText(getActivity(), ScenChild.getScenname(), Toast.LENGTH_SHORT).show();
                 return true;
             }
@@ -59,7 +61,12 @@ public class PublicScenFragment extends Fragment {
         //ScenChild = MainActivity.getPublicScenClassscenList();
         expandableListView.setAdapter(new PublicScenFragment.MyExpandableListViewAdapter(getActivity()));
     }
-
+    //跳转到想定详情
+    public void JumpinFo(int scenid) {
+        Intent intent = new Intent(getActivity(), ScenarioAllInfoActivity.class);
+        intent.putExtra("scenid", scenid);
+        startActivity(intent);
+    }
     class MyExpandableListViewAdapter extends BaseExpandableListAdapter {
 
         private Context context;
@@ -111,10 +118,10 @@ public class PublicScenFragment extends Fragment {
             PublicScenFragment.GroupHolder groupHolder = null;     //我们自己设定的一个简单类，用来存储控件的相关信息
             if (convertView == null) {          //这里的convertView其实是一个起缓冲作用的，工具，因为当一个item从屏幕中滚出，我们把它放到convertView里                                                 //，这样再滑回来的时候可以直接去取，不用重新创建，这里也推荐一个网址，大家可以详细了解
 
-                convertView = (View) getActivity().getLayoutInflater().from(context).inflate(
+                convertView = getActivity().getLayoutInflater().from(context).inflate(
                         R.layout.friendlist2_groupitem, null);      //把界面放到缓冲区
                 groupHolder = new PublicScenFragment.GroupHolder();          //实例化我们创建的这个类
-                groupHolder.txt = (TextView) convertView.findViewById(R.id.notice_item_date);  //实例化类里的TextView
+                groupHolder.txt = convertView.findViewById(R.id.notice_item_date);  //实例化类里的TextView
                 convertView.setTag(groupHolder);                                 //给view对象一个标签，告诉计算机我们已经在缓冲区里放了一个view，下回直                                                                               //接来拿就行了
             } else {
                 groupHolder = (PublicScenFragment.GroupHolder) convertView.getTag();     //然后他就直接来拿
@@ -128,11 +135,11 @@ public class PublicScenFragment extends Fragment {
                                  boolean isLastChild, View convertView, ViewGroup parent) {
             PublicScenFragment.ItemHolder itemHolder = null;
             if (convertView == null) {
-                convertView = (View) getActivity().getLayoutInflater().from(context).inflate(
+                convertView = getActivity().getLayoutInflater().from(context).inflate(
                         R.layout.friendlist2_childitem, null);
                 itemHolder = new PublicScenFragment.ItemHolder();
-                itemHolder.txt = (TextView) convertView.findViewById(R.id.group);
-                itemHolder.img = (ImageView) convertView.findViewById(R.id.iv);
+                itemHolder.txt = convertView.findViewById(R.id.group);
+                itemHolder.img = convertView.findViewById(R.id.iv);
                 convertView.setTag(itemHolder);
             } else {
                 itemHolder = (PublicScenFragment.ItemHolder) convertView.getTag();

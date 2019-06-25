@@ -14,7 +14,12 @@ public class UserModel {
     private String email;
     private int userstatus = 0;// 用户状态    0无；1在线；2离开；3忙碌；4免打扰；5隐身；6离线。
     private int user_webcam;// 头像？
+    private int select_scenarioid;//选中的想定id
 
+    public void setselectscenarioid(int scenrioid) {
+        this.select_scenarioid = scenrioid;
+    }
+    public int getselectscenarioid(){ return  select_scenarioid; }
     public int getUser_webcam() {
         return user_webcam;
     }
@@ -95,5 +100,15 @@ public class UserModel {
         account = obj.getString(Defines.USER_ACCOUNT);
         email = obj.getString(Defines.USER_EMAIL);
         userstatus = obj.getInt(Defines.USER_LOGIN_STATUS);
+    }
+
+    //请求显示选中的想定信息
+    public String toShowScenarioAllinfo()throws JSONException
+    {
+        JSONObject userobj = new JSONObject();
+        userobj.put(Defines.CLIENT_REQUEST_TYPE_STR, Defines.REQUEST_TYPE_SCENARIO_INFO);
+        String scenid =  String.valueOf(select_scenarioid) ;//想定的int类型转换为string
+        userobj.put(Defines.SCENARIO_ID,scenid);
+        return userobj.toString();
     }
 }

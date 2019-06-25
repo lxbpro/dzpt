@@ -12,6 +12,7 @@ import com.gamecenter.gamecenter.activity.LoginActivity;
 import com.gamecenter.gamecenter.activity.MainActivity;
 import com.gamecenter.gamecenter.activity.NewChat.NewChatActivity;
 import com.gamecenter.gamecenter.activity.RegisterActivity;
+import com.gamecenter.gamecenter.activity.ScenarioAllInfoActivity;
 import com.gamecenter.gamecenter.bean.MsgBelong;
 import com.gamecenter.gamecenter.bean.MsgBody;
 import com.gamecenter.gamecenter.bean.MsgSendStatus;
@@ -74,6 +75,8 @@ public class DealServerMsg {
                 case Defines.REQUEST_TYPE_REGIST_RESULT:
                     registerreturnMsg(msgObj);
                     break;
+                case Defines.REQUEST_TYPE_SCENARIO_INFO_RESULT:
+                    requestscenarioreturnMsg(msgObj);
                 default:
                     break;
             }
@@ -109,15 +112,45 @@ public class DealServerMsg {
     //用户注册后的回调信息【成功或失败】
     private static void registerreturnMsg(JSONObject msgobj) throws JSONException {
 
-       String boolresult= msgobj.getString(Defines.REQUEST_TYPE_RESULT);
+        String boolresult = msgobj.getString(Defines.REQUEST_TYPE_RESULT);
         String errotstr = msgobj.getString(Defines.REQUEST_TYPE_ERROR_INFO);
         Looper.prepare();//增加部
         RegisterActivity loginActivity = (RegisterActivity) BaseActivity.getCurrentActivity();
         loginActivity.showRollbackTest(errotstr);
-        if(boolresult.equals("True")) {
+        if (boolresult.equals("True")) {
             loginActivity.backLogin();
         }
         Looper.loop();
+    }
+
+    //查看想定详情信息
+    private static void requestscenarioreturnMsg(JSONObject msgobj) throws JSONException {
+
+
+        boolean boolresult = msgobj.getBoolean(Defines.REQUEST_TYPE_RESULT);//先判断是否成功
+        if (boolresult)
+        {
+            String authorstr = msgobj.getString(Defines.SCENARIO_AUTHOR);//想定作者
+            String description = "";//想定描述
+            JSONArray jsonlist = msgobj.getJSONArray(Defines.SCENARIO_AI_INFO);
+            for (int i = 0; i < jsonlist.length(); i++) {
+                description = jsonlist.getJSONObject(i).getString(Defines.SCENARIO_AI_DESCRIPTION);
+            }
+            String scenarioname = msgobj.getString(Defines.SCENARIO_NAME);//想定名称
+            Looper.prepare();//增加部
+            ScenarioAllInfoActivity scenariactivity = (ScenarioAllInfoActivity) BaseActivity.getCurrentActivity();
+            scenariactivity.showallinfo(authorstr, description, scenarioname);
+            Looper.loop();//执行
+        } else {
+            String resultstr = msgobj.getString(Defines.REQUEST_TYPE_ERROR_INFO);
+            Looper.prepare();//增加部
+            ScenarioAllInfoActivity scenariactivity = (ScenarioAllInfoActivity) BaseActivity.getCurrentActivity();
+            scenariactivity.showRollbackTest(msgobj.getString(Defines.REQUEST_TYPE_ERROR_INFO));
+            Looper.loop();//执行
+        }
+
+
+
     }
 
     private static void parsePrivateMsg(JSONObject msgobj) throws JSONException, ParseException {
@@ -125,6 +158,7 @@ public class DealServerMsg {
         Message message = new Message();
         message.setUuid(UUID.randomUUID() + "");
         //message.setMsgId();
+
         message.setMsgType(MsgType.TEXT);
         message.setSenderId(msgobj.getString(Defines.USER_ID));
         message.setTargetId(String.format("%d", BaseActivity.getCurrentUser().getId()));

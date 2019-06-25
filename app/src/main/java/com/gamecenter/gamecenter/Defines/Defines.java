@@ -20,8 +20,10 @@ public class Defines {
     public static final int REQUEST_TYPE_UPDATE_FRIEND_LIST = 1027;					      // 更新好友列表
     public static final int REQUEST_TYPE_SEND_PRIVATE_MESSAGE = 1029;					  // 发送私聊消息
     public static final int REQUEST_TYPE_UPDATE_GROUP = 1036;								  // 更新群列表
+    public static final int REQUEST_TYPE_SCENARIO_INFO = 1039;								// 请求查看想定信息
     public static final int REQUEST_TYPE_SEND_GROUP_MESSAGE = 1051;								// 发送群聊消息
     public static final int REQUEST_TYPE_UPDATE_GROUP_MEMBER = 1054;								// 更新群成员
+
     /*
 
     public static final int REQUEST_TYPE_USER_INFO = 1003;											// 用户信息
@@ -135,8 +137,9 @@ public class Defines {
     public static final int REQUEST_TYPE_UPDATE_FRIEND_LIST_RESULT = 2030;				// 更新好友列表结果
     public static final int REQUEST_TYPE_SEND_PRIVATE_MESSAGE_RESULT = 2031;			// 发送私聊消息结果
     public static final int REQUEST_TYPE_UPDATE_GROUP_LIST_RESULT = 2041;				// 更新群列表结果
-    public static final int REQUEST_TYPE_SEND_GROUP_MESSAGE_RESULT = 2056;						// 发送群消息
-    public static final int REQUEST_TYPE_UPDATE_GROUP_MEMBER_RESULT = 2061;					// 更新群成员结果
+    public static final int REQUEST_TYPE_SCENARIO_INFO_RESULT= 2044;					// 请求查看想定信息
+    public static final int REQUEST_TYPE_SEND_GROUP_MESSAGE_RESULT = 2056;				// 发送群消息
+    public static final int REQUEST_TYPE_UPDATE_GROUP_MEMBER_RESULT = 2061;			// 更新群成员结果
     /*
     public static final int REQUEST_TYPE_USER_INFO_RESULT = 2003;								// 用户信息结果
     public static final int REQUEST_TYPE_LOAD_SERVICE_RESULT = 2004;							// 更新服务区和房间结果

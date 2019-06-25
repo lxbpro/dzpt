@@ -42,8 +42,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity">
+        <intent-filter>
+            <action android:name="com.gamecenter.gamecenter.activity.RegisterActivity"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+        </intent-filter>
+      </activity>
+        <activity android:name=".ScenarioAllInfoActivity">
             <intent-filter>
-                <action android:name="com.gamecenter.gamecenter.activity.RegisterActivity"/>
+                <action android:name="com.gamecenter.gamecenter.activity.ScenarioAllInfoActivity"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
