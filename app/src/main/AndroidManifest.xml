@@ -71,6 +71,12 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ToFindTheGroup">
+            <intent-filter>
+                <action android:name="com.gamecenter.gamecenter.activity.ToFindTheGroup"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

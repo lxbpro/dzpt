@@ -36,6 +36,7 @@
 	<string name="ok">OK</string>
 	<string name="register">注 册</string>
 	<string name="nextstep">下一步</string>
+	<string name="groupname">群组名</string>
 	<string name="inputpassword">请输入密码</string>
 	<string name="nokown">KoBe</string>
 	<string name="messge">消息</string>

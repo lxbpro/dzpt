@@ -40,18 +40,18 @@ public class GroupFragment extends Fragment implements View.OnClickListener{
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 		// 加群
-		imagebtnaddgroup = (ImageButton) view.findViewById(R.id.tab_item_grouplist_btn_addgroup);
-		imagebtnnewgroup = (ImageButton) view.findViewById(R.id.tab_item_grouplist_btn_newgroup);
-		imagebtnnewgroupclass = (ImageButton)view.findViewById(R.id.tab_item_grouplist_btn_newgroupclass);
-		imagebtngroupsearch = (ImageButton)view.findViewById(R.id.tab_item_grouplist_btn_search);
-		etsearch = (EditText)view.findViewById(R.id.tab_item_grouplist_et_search);
+		imagebtnaddgroup = view.findViewById(R.id.tab_item_grouplist_btn_addgroup);
+		imagebtnnewgroup = view.findViewById(R.id.tab_item_grouplist_btn_newgroup);
+		imagebtnnewgroupclass = view.findViewById(R.id.tab_item_grouplist_btn_newgroupclass);
+		imagebtngroupsearch = view.findViewById(R.id.tab_item_grouplist_btn_search);
+		etsearch = view.findViewById(R.id.tab_item_grouplist_et_search);
 		imagebtnaddgroup.setOnClickListener(this);
 		imagebtnnewgroup.setOnClickListener(this);
 		imagebtnnewgroupclass.setOnClickListener(this);
 		imagebtngroupsearch.setOnClickListener(this);
 
 
-		expandableListView = (ExpandableListView)view.findViewById(R.id.tab_item_grouplist_expandlistview);
+		expandableListView = view.findViewById(R.id.tab_item_grouplist_expandlistview);
 		expandableListView.setAdapter(new GroupFragment.MyExpandableListViewAdapter(getActivity()));
 		//expandableListView.setGroupIndicator(null);
 		//设置子选项点击监听事件
@@ -79,6 +79,12 @@ public class GroupFragment extends Fragment implements View.OnClickListener{
 	public void onClick(View v) {
 		switch (v.getId()){
 			case R.id.tab_item_grouplist_btn_addgroup:
+				// 转到加群页面
+				Intent intent = new Intent(getActivity(), ToFindTheGroup.class);
+				Bundle bundle = new Bundle();
+			/*	bundle.putParcelable("group",Child);*/
+				intent.putExtras(bundle);
+				startActivity(intent);
 				Toast.makeText(getActivity(),"申请加群",Toast.LENGTH_SHORT).show();
 				break;
 			case R.id.tab_item_grouplist_btn_newgroup:
@@ -152,9 +158,9 @@ public class GroupFragment extends Fragment implements View.OnClickListener{
 			// ，这样再滑回来的时候可以直接去取，不用重新创建，这里也推荐一个网址，大家可以详细了解
 			if (convertView == null) {
 				//把界面放到缓冲区
-				convertView = (View) getActivity().getLayoutInflater().from(context).inflate(R.layout.friendlist2_groupitem, null);
+				convertView = getActivity().getLayoutInflater().from(context).inflate(R.layout.friendlist2_groupitem, null);
 				groupHolder = new GroupFragment.GroupHolder();          //实例化我们创建的这个类
-				groupHolder.txt = (TextView) convertView.findViewById(R.id.notice_item_date);  //实例化类里的TextView
+				groupHolder.txt = convertView.findViewById(R.id.notice_item_date);  //实例化类里的TextView
 				// 给view对象一个标签，告诉计算机我们已经在缓冲区里放了一个view，下回直接来拿就行了
 				convertView.setTag(groupHolder);
 			} else {
@@ -168,10 +174,10 @@ public class GroupFragment extends Fragment implements View.OnClickListener{
 		public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 			GroupFragment.ItemHolder itemHolder = null;
 			if (convertView == null) {
-				convertView = (View) getActivity().getLayoutInflater().from(context).inflate(R.layout.friendlist2_childitem, null);
+				convertView = getActivity().getLayoutInflater().from(context).inflate(R.layout.friendlist2_childitem, null);
 				itemHolder = new GroupFragment.ItemHolder();
-				itemHolder.txt = (TextView) convertView.findViewById(R.id.group);
-				itemHolder.img = (ImageView) convertView.findViewById(R.id.iv);
+				itemHolder.txt = convertView.findViewById(R.id.group);
+				itemHolder.img = convertView.findViewById(R.id.iv);
 				convertView.setTag(itemHolder);
 			} else {
 				itemHolder = (GroupFragment.ItemHolder) convertView.getTag();
