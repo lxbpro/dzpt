@@ -139,7 +139,8 @@ public class DealServerMsg {
             String scenarioname = msgobj.getString(Defines.SCENARIO_NAME);//想定名称
             Looper.prepare();//增加部
             ScenarioAllInfoActivity scenariactivity = (ScenarioAllInfoActivity) BaseActivity.getCurrentActivity();
-            scenariactivity.showallinfo(authorstr, description, scenarioname);
+            String strhtmlcomments=msgobj.getString(Defines.SCENARIO_COMMENTS);//想定内容
+            scenariactivity.showallinfo(authorstr, description, scenarioname,strhtmlcomments);
             Looper.loop();//执行
         } else {
             String resultstr = msgobj.getString(Defines.REQUEST_TYPE_ERROR_INFO);
