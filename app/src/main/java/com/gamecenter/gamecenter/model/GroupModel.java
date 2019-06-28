@@ -3,7 +3,12 @@ package com.gamecenter.gamecenter.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.gamecenter.gamecenter.Defines.Defines;
 import com.gamecenter.gamecenter.activity.R;
+import com.gamecenter.gamecenter.util.MD5Util;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
 import java.util.Map;
@@ -108,5 +113,13 @@ public class GroupModel implements Parcelable {
     }
     public void removeMemberById(Integer id){
         groupMember.remove(id);
+    }
+
+
+    public String toFindGroupjson() throws JSONException {
+        JSONObject userobj = new JSONObject();
+        userobj.put(Defines.CLIENT_REQUEST_TYPE_STR, Defines.REQUEST_TYPE_FIND_GROUP);
+        userobj.put(Defines.GROUP_NAME,groupName);
+        return userobj.toString();
     }
 }

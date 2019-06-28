@@ -13,6 +13,7 @@ import com.gamecenter.gamecenter.activity.MainActivity;
 import com.gamecenter.gamecenter.activity.NewChat.NewChatActivity;
 import com.gamecenter.gamecenter.activity.RegisterActivity;
 import com.gamecenter.gamecenter.activity.ScenarioAllInfoActivity;
+import com.gamecenter.gamecenter.activity.ToFindTheGroup;
 import com.gamecenter.gamecenter.bean.MsgBelong;
 import com.gamecenter.gamecenter.bean.MsgBody;
 import com.gamecenter.gamecenter.bean.MsgSendStatus;
@@ -77,6 +78,10 @@ public class DealServerMsg {
                     break;
                 case Defines.REQUEST_TYPE_SCENARIO_INFO_RESULT:
                     requestscenarioreturnMsg(msgObj);
+                case Defines.REQUEST_TYPE_FIND_GROUP__RESULT:
+                    //查找群
+                    findgroupreturnMsg(msgObj);
+                    break;
                 default:
                     break;
             }
@@ -279,5 +284,28 @@ public class DealServerMsg {
             main.showNotification(true, message);
         }
     }
+
+    //查找群-服务器返回的json
+    private static void findgroupreturnMsg(JSONObject msgobj) throws JSONException {
+        ADataManage.getInstance().clearGroupData();
+        String boolresult = msgobj.getString(Defines.REQUEST_TYPE_RESULT);
+        /*String errotstr = msgobj.getString(Defines.REQUEST_TYPE_ERROR_INFO);*/
+        if (!boolresult.equals("True")) {
+            return;
+        }
+
+        JSONArray  jsonarray= msgobj.getJSONArray(Defines.GROUP_LIST);
+        for (int i = 0; i < jsonarray.length(); i++) {
+            GroupModel group = new GroupModel();
+            group.setGroupid(jsonarray.getJSONObject(i).getString(Defines.GROUP_ID));
+            group.setGroupName(jsonarray.getJSONObject(i).getString(Defines.GROUP_NAME));
+            ADataManage.getInstance().addGroupModel(group);
+        }
+        Looper.prepare();//增加部
+        ToFindTheGroup loginActivity = (ToFindTheGroup) BaseActivity.getCurrentActivity();
+        loginActivity.UpdataLoad();
+        Looper.loop();
+    }
+
 
 }
