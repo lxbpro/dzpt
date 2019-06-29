@@ -19,6 +19,7 @@ public class Defines {
     public static final int REQUEST_TYPE_LOAD_SCENARIO_LIST = 1005;								// 更新想定列表
     public static final int REQUEST_TYPE_UPDATE_FRIEND_LIST = 1027;					      // 更新好友列表
     public static final int REQUEST_TYPE_SEND_PRIVATE_MESSAGE = 1029;					  // 发送私聊消息
+    public static final int REQUEST_TYPE_CREATE_GROUP = 1035;										// 创建群
     public static final int REQUEST_TYPE_UPDATE_GROUP = 1036;								  // 更新群列表
     public static final int REQUEST_TYPE_SCENARIO_INFO = 1039;								// 请求查看想定信息
     public static final int REQUEST_TYPE_SEND_GROUP_MESSAGE = 1051;								// 发送群聊消息
@@ -53,7 +54,6 @@ public class Defines {
     public static final int REQUEST_TYPE_START_GAME = 1030;										// 启动游戏
     public static final int REQUEST_TYPE_DELETE_FRIEND = 1031;										// 删除好友
     public static final int REQUEST_TYPE_BLACK_FRIEND = 1032;										// 好友拉入黑名单
-    public static final int REQUEST_TYPE_CREATE_GROUP = 1033;										// 创建群
     public static final int REQUEST_TYPE_GLOBAL_CHAT = 1035;										// 全局聊天（游戏大厅）
     public static final int REQUEST_TYPE_GET_USER_INFO = 1036;										// 获取用户信息
     public static final int REQUEST_TYPE_GET_SCENARIO_INFO = 1037;									// 获取想定信息
@@ -136,6 +136,7 @@ public class Defines {
     public static final int REQUEST_TYPE_LOAD_SCENARIO_LIST_RESULT = 2005;				// 更新想定列表结果
     public static final int REQUEST_TYPE_UPDATE_FRIEND_LIST_RESULT = 2030;				// 更新好友列表结果
     public static final int REQUEST_TYPE_SEND_PRIVATE_MESSAGE_RESULT = 2031;			// 发送私聊消息结果
+    public static final int REQUEST_TYPE_CREATE_GROUP_RESULT = 2040;							// 创建群结果
     public static final int REQUEST_TYPE_UPDATE_GROUP_LIST_RESULT = 2041;				// 更新群列表结果
     public static final int REQUEST_TYPE_SCENARIO_INFO_RESULT= 2044;					// 请求查看想定信息
     public static final int REQUEST_TYPE_SEND_GROUP_MESSAGE_RESULT = 2056;				// 发送群消息
@@ -174,7 +175,6 @@ public class Defines {
     public static final int REQUEST_TYPE_DELETE_FRIEND_RESULT = 2035;							// 删除好友结果
     public static final int REQUEST_TYPE_NOTIFICATION_MESSAGE = 2036;							// 通知消息
     public static final int REQUEST_TYPE_UPDATE_ROOM_INFO = 2037;								// 更新房间信息
-    public static final int REQUEST_TYPE_CREATE_GROUP_RESULT = 2038;							// 创建群结果
     public static final int REQUEST_TYPE_GLOBAL_CHAT_RESULT = 2040;							// 全局聊天（游戏大厅）结果
     public static final int REQUEST_TYPE_GET_USER_INFO_RESULT = 2041;							// 获取用户信息结果
     public static final int REQUEST_TYPE_GET_SCENARIO_INFO_RESULT = 2042;						// 获取想定信息结果

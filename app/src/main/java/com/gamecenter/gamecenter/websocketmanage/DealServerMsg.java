@@ -7,6 +7,7 @@ import android.widget.Toast;
 import com.gamecenter.gamecenter.Defines.Defines;
 import com.gamecenter.gamecenter.activity.BaseActivity;
 import com.gamecenter.gamecenter.activity.ChatActivity;
+import com.gamecenter.gamecenter.activity.CreateGroupActivity;
 import com.gamecenter.gamecenter.activity.GroupChatActivity;
 import com.gamecenter.gamecenter.activity.LoginActivity;
 import com.gamecenter.gamecenter.activity.MainActivity;
@@ -78,6 +79,10 @@ public class DealServerMsg {
                     break;
                 case Defines.REQUEST_TYPE_SCENARIO_INFO_RESULT:
                     requestscenarioreturnMsg(msgObj);
+                    break;
+                case Defines.REQUEST_TYPE_CREATE_GROUP_RESULT:
+                    parseGroupCreateResult(msgObj);
+                    break;
                 case Defines.REQUEST_TYPE_FIND_GROUP__RESULT:
                     //查找群
                     findgroupreturnMsg(msgObj);
@@ -285,6 +290,10 @@ public class DealServerMsg {
         }
     }
 
+    private static void parseGroupCreateResult(JSONObject msgobj) throws JSONException, ParseException {
+        CreateGroupActivity createGroupActivity = (CreateGroupActivity)BaseActivity.getCurrentActivity();
+        createGroupActivity.ShowCreateGroupResult(msgobj);
+    }
     //查找群-服务器返回的json
     private static void findgroupreturnMsg(JSONObject msgobj) throws JSONException {
         ADataManage.getInstance().clearGroupData();

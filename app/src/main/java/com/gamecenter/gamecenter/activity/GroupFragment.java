@@ -88,7 +88,10 @@ public class GroupFragment extends Fragment implements View.OnClickListener{
 				Toast.makeText(getActivity(),"申请加群",Toast.LENGTH_SHORT).show();
 				break;
 			case R.id.tab_item_grouplist_btn_newgroup:
-				Toast.makeText(getActivity(),"新建群",Toast.LENGTH_SHORT).show();
+				// 转到建群页面
+				Intent createGroupIntent = new Intent(getActivity(), CreateGroupActivity.class);
+				startActivity(createGroupIntent);
+//				Toast.makeText(getActivity(),"新建群",Toast.LENGTH_SHORT).show();
 				break;
 			case R.id.tab_item_grouplist_btn_newgroupclass:
 				Toast.makeText(getActivity(),"新建群分类",Toast.LENGTH_SHORT).show();
